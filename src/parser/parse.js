@@ -141,17 +141,13 @@ function parseBlock(lines, parsed, pointer) {
   block['year in full'] = includes[0]
     ? Number(lines[pointer++])
     : firstBlock['year in full'];
-  block['month'] = includes[1] ? Number(lines[pointer++]) : firstBlock['month'];
+  block.month = includes[1] ? Number(lines[pointer++]) : firstBlock.month;
   block['day of month'] = includes[2]
     ? Number(lines[pointer++])
     : firstBlock['day of month'];
-  block['hours'] = includes[3] ? Number(lines[pointer++]) : firstBlock['hours'];
-  block['minutes'] = includes[4]
-    ? Number(lines[pointer++])
-    : firstBlock['minutes'];
-  block['seconds'] = includes[5]
-    ? Number(lines[pointer++])
-    : firstBlock['seconds'];
+  block.hours = includes[3] ? Number(lines[pointer++]) : firstBlock.hours;
+  block.minutes = includes[4] ? Number(lines[pointer++]) : firstBlock.minutes;
+  block.seconds = includes[5] ? Number(lines[pointer++]) : firstBlock.seconds;
   block['number of hours in advance of Greenwich Mean Time'] = includes[6]
     ? Number(lines[pointer++])
     : firstBlock['number of hours in advance of Greenwich Mean Time'];
@@ -163,14 +159,14 @@ function parseBlock(lines, parsed, pointer) {
     for (let i = 0; i < nbComments; i++) {
       comments.push(lines[pointer++]);
     }
-    block['blockComment'] = comments.join('\n');
+    block.blockComment = comments.join('\n');
   } else {
     block['number of lines in block comment'] =
       firstBlock['number of lines in block comment'];
-    block['blockComment'] = firstBlock.blockComment;
+    block.blockComment = firstBlock.blockComment;
   }
 
-  block['technique'] = includes[8] ? lines[pointer++] : firstBlock['technique'];
+  block.technique = includes[8] ? lines[pointer++] : firstBlock.technique;
   if (['MAP', 'MAPDP'].includes(header['experiment mode'])) {
     block['x coordinate'] = includes[9]
       ? Number(lines[pointer++])
