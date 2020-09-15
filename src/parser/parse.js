@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const experiments = [
   'MAP',
   'MAPDP',
@@ -454,7 +455,3 @@ function parseBlock(lines, parsed, pointer) {
 
   parsed.blocks.push(block);
 }
-
-function loadBlockHeader(lines, header, pointer) {}
-
-function loadBlockData() {}
