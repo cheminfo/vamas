@@ -9,7 +9,7 @@ describe('fromVamas', () => {
     let parsed = parse(text);
     expect(parsed.blocks).toHaveLength(3);
   });
-  it('ARXPS', () => {
+  it('survey', () => {
     const text = readFileSync(join(__dirname, './data/survey.vms'), 'utf8');
     let parsed = parse(text);
 
