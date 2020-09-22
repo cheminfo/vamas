@@ -36,7 +36,7 @@ export function parse(text) {
   let parsed = { header: {}, blocks: [], info: {} };
   pointer = parseHeader(lines, parsed, pointer);
   for (let i = 0; i < parsed.info.nbBlocks; i++) {
-    parseBlock(lines, parsed, pointer);
+    pointer = parseBlock(lines, parsed, pointer);
   }
   return parsed;
 }
@@ -79,6 +79,7 @@ function parseHeader(lines, parsed, pointer) {
     });
   }
   header.experimentVariables = experimentVariables;
+
   /*
     If the values of any of the block parameters are the same in all of the
     blocks their values may be sent in the first block and then omitted
@@ -134,7 +135,7 @@ function parseBlock(lines, parsed, pointer) {
   const includes =
     blocks.length === 0
       ? new Array(40).fill(true)
-      : info.nbEntriesInclusionExclusion;
+      : info.blockParametersincludes;
 
   const block = {};
   block['block identifier'] = lines[pointer++];
@@ -337,6 +338,7 @@ function parseBlock(lines, parsed, pointer) {
   block['abscissa units'] = includes[30]
     ? lines[pointer++]
     : firstBlock['abscissa units'];
+
   block['abscissa start'] = includes[30]
     ? Number(lines[pointer++])
     : firstBlock['abscissa start'];
@@ -458,4 +460,5 @@ function parseBlock(lines, parsed, pointer) {
   }
 
   parsed.blocks.push(block);
+  return pointer;
 }
