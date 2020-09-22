@@ -447,7 +447,11 @@ function parseBlock(lines, parsed, pointer) {
     correspondingVariable.minimumOrdinateValue = Number(lines[pointer++]);
     correspondingVariable.maximumOrdinateValue = Number(lines[pointer++]);
   }
-  for (let i = 0; i < block.nbOrdinateValues; i++) {
+  for (
+    let i = 0;
+    i < block.nbOrdinateValues / block.correspondingVariables.length;
+    i++
+  ) {
     for (let correspondingVariable of block.correspondingVariables) {
       correspondingVariable.array.push(Number(lines[pointer++]));
     }

@@ -7,6 +7,11 @@
 
 Vamas file format parser.
 
+
+https://www.iso.org/standard/24269.html
+
+
+
 ## Installation
 
 `$ npm i vamas`
