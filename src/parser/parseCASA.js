@@ -12,5 +12,6 @@ export function parseCASA(text) {
 
 function parseComp(line) {
   let fields = line.split(' ');
+  // eslint-disable-next-line no-console
   console.log(fields);
 }
