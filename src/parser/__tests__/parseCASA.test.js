@@ -11,6 +11,6 @@ describe('parseCASA', () => {
     );
     let casa = parseCASA(text);
 
-    expect(casa).toEqual({});
+    expect(casa).toStrictEqual({});
   });
 });
