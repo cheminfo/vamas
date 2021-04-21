@@ -9,6 +9,7 @@
     "src"
   ],
   "scripts": {
+    "build": "cheminfo-build  --entry src/index.js --root Vamas",
     "eslint": "eslint src",
     "eslint-fix": "npm run eslint -- --fix",
     "prepublishOnly": "rollup -c",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@types/jest": "^26.0.15",
+    "cheminfo-build": "^1.1.10",
     "eslint": "^7.13.0",
     "eslint-config-cheminfo": "^5.2.2",
     "eslint-plugin-import": "^2.22.1",
