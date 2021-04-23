@@ -22,9 +22,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Deploy to lactame.com
-        uses: zakodium/lactame-action@v1
+        uses: zakodium/lactame-action@MAIN
         with:
           token: ${{ secrets.LACTAME_TOKEN }}
-          name: ${{ env.PACKAGE_NAME }}
-          folder: dist
           version: HEAD
