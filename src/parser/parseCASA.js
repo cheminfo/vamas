@@ -23,7 +23,6 @@ function appendCalibration(calibrations, line) {
   if (fields.length === 0) {
     throw new Error(`appendCalibration fails on: ${line}`);
   }
-  console.log(fields.slice(1));
   calibrations.push(calibration);
 }
 
@@ -36,7 +35,6 @@ function appendRegion(regions, line) {
   if (fields.length === 0) {
     throw new Error(`appendCalibration fails on: ${line}`);
   }
-  console.log(fields.slice(1));
   regions.push(region);
 }
 

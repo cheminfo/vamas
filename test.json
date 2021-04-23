@@ -1,0 +1,75 @@
+{
+  "name": "vamas",
+  "version": "0.0.3",
+  "description": "Vamas file format parser",
+  "main": "lib/index.js",
+  "module": "src/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "cheminfo-build  --entry src/index.js --root Vamas",
+    "eslint": "eslint src",
+    "eslint-fix": "npm run eslint -- --fix",
+    "prepublishOnly": "rollup -c",
+    "test": "npm run test-coverage && npm run eslint",
+    "test-coverage": "jest --coverage",
+    "test-only": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheminfo/vamas.git"
+  },
+  "keywords": [],
+  "author": "Luc Patiny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheminfo/vamas/issues"
+  },
+  "homepage": "https://github.com/cheminfo/vamas#readme",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.13.8",
+    "@types/jest": "^26.0.22",
+    "cheminfo-build": "^1.1.10",
+    "eslint": "^7.24.0",
+    "eslint-config-cheminfo": "^5.2.3",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rollup": "^2.45.2"
+  },
+  "info": {
+    "logo": "https://raw.githubusercontent.com/cheminfo/font/master/src/misc/cristal2.svg",
+    "domain": [
+      "Physical Chemistry",
+      "Materials Science"
+    ],
+    "technique": {
+      "name": "XPS",
+      "chmo": "0000404",
+      "iupac": "https://doi.org/10.1351/goldbook.X06716"
+    },
+    "functionality": {
+      "fileTypes": [
+        {
+          "extension": "vms",
+          "manufacturer": "ISO 14976",
+          "example": "https://raw.githubusercontent.com/cheminfo/xps-analysis/master/testFiles/assigned.vms"
+        }
+      ]
+    }
+  }
+}
