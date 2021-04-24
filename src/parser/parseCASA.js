@@ -50,10 +50,10 @@ function appendComponent(components, line) {
       /(?<mfwm>MFWHM .*)/,
       /(?<position>Position .*) /,
       /(?<rsf>RSF .*) /,
-      /(MASS .*) /,
-      /(INDEX .*) /,
-      /(CONST .*) /,
-      /(UNCORRECTEDRSF.*)/,
+      /(?<mass>MASS .*) /,
+      /(?<index>INDEX .*) /,
+      /(?<const>CONST .*) /,
+      /(?<uncorrectedRSF>UNCORRECTEDRSF.*)/,
     ]
       .map((r) => r.source)
       .join(''),
