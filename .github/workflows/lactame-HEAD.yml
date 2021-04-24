@@ -1,4 +1,4 @@
-name: Deploy HEAD lactame.com
+name: Deploy HEAD on lactame.com
 
 on:
   push:
