@@ -41,11 +41,28 @@ function appendRegion(regions, line) {
 function appendComponent(components, line) {
   // CASA comp (*Mo 3d MoS2 2H*) (*LA(1.53,243)*) Area 230.36971 1e-020 2327991 -1 1 MFWHM 0.88528218 0.2 2 -1 1 Position 1257.22 1257.02 1257.22 -1 1 RSF 10.804667 MASS 95.9219 INDEX -1 (*Mo 3d*) CONST (**) UNCORRECTEDRSF 9.5
   let component = {};
-  let fields = line.match(
-    /CASA comp \((.*)\) \(([^ ]*)\) (Area .*) (MFWHM .*) (Position .*) (RSF .*) (MASS .*) (INDEX .*) (CONST .*) (UNCORRECTEDRSF.*)/,
+  const componentRegex = new RegExp(
+    [
+      /CASA comp /,
+      /\((.*)\) /,
+      /\(([^ ]*)\) /,
+      /(?<area>Area .*)/,
+      /(?<mfwm>MFWHM .*)/,
+      /(?<position>Position .*) /,
+      /(?<rsf>RSF .*) /,
+      /(MASS .*) /,
+      /(INDEX .*) /,
+      /(CONST .*) /,
+      /(UNCORRECTEDRSF.*)/,
+    ]
+      .map((r) => r.source)
+      .join(''),
   );
+
+  let fields = line.match(componentRegex);
   if (fields.length === 0) {
     throw new Error(`appendCalibration fails on: ${line}`);
   }
+  component = { ...fields };
   components.push(component);
 }

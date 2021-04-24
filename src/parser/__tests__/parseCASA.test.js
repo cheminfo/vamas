@@ -10,7 +10,6 @@ describe('parseCASA', () => {
       'utf8',
     );
     let casa = parseCASA(text);
-
     expect(casa).toBeDefined();
   });
 });
