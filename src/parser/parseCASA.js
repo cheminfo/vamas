@@ -16,6 +16,5 @@ export function parseCASA(text) {
       appendCalibration(casa.calibrations, line);
     }
   }
-
   return casa;
 }

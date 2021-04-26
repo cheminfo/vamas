@@ -51,6 +51,10 @@ function parseShape(value) {
       options.asymmetry = Number(parts[1]);
       options.extension = Number(parts[2]);
       break;
+    case 'GL':
+      kind = `??? ${parts[0]}`;
+      options.unknown = Number(parts[1]);
+      break;
     default:
       throw Error(`appendComponent: unknown shape: ${parts[0]}`);
   }
