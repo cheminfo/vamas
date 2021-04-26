@@ -20,8 +20,8 @@ export function appendComponent(components, line) {
   );
 
   let fields = line.match(componentRegex);
-  if (fields.length === 0) {
-    throw new Error(`appendCalibration fails on: ${line}`);
+  if (!fields) {
+    throw new Error(`appendComponent fails on: ${line}`);
   }
   component = {
     name: fields.groups.name,
@@ -35,7 +35,6 @@ export function appendComponent(components, line) {
     const: parseConst(fields.groups.const),
     uncorrectedRSF: parseUncorrectedRSF(fields.groups.uncorrectedRSF),
   };
-  console.log(component);
   components.push(component);
 }
 

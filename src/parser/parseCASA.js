@@ -1,4 +1,6 @@
+import { appendCalibration } from './casa/appendCalibration';
 import { appendComponent } from './casa/appendComponent';
+import { appendRegion } from './casa/appendRegion';
 
 export function parseCASA(text) {
   const casa = { regions: [], components: [], calibrations: [] };
@@ -16,26 +18,4 @@ export function parseCASA(text) {
   }
 
   return casa;
-}
-
-function appendCalibration(calibrations, line) {
-  let calibration = {};
-  // Calib M = 281.1700 A = 284.8 BE AD
-  let fields = line.match(/Calib (M = .*) (A = [^ ]*) (.*)/);
-  if (fields.length === 0) {
-    throw new Error(`appendCalibration fails on: ${line}`);
-  }
-  calibrations.push(calibration);
-}
-
-function appendRegion(regions, line) {
-  // CASA region (*Mo 3d*) (*Shirley*) 1249.3343 1262.7065 10.804667 2 0 0 392.54541 -450 0 0 (*Mo 3d*) 95.9219 0 9.5
-  let region = {};
-  let fields = line.match(
-    /CASA region \((.*)\) \(([^ ]*)\) (.*) \((.*)\) (.*)/,
-  );
-  if (fields.length === 0) {
-    throw new Error(`appendCalibration fails on: ${line}`);
-  }
-  regions.push(region);
 }
