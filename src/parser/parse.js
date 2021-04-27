@@ -35,6 +35,7 @@ export function parse(text) {
   let pointer = 0;
   let parsed = { header: {}, blocks: [], info: {} };
   pointer = parseHeader(lines, parsed, pointer);
+  console.log(parsed.header);
   for (let i = 0; i < parsed.info.nbBlocks; i++) {
     pointer = parseBlock(lines, parsed, pointer);
   }
@@ -122,7 +123,6 @@ function parseHeader(lines, parsed, pointer) {
   if (header['number of future upgrade block entries'] !== 0) {
     throw Error('unsupported future upgrade block entries');
   }
-
   info.nbBlocks = Number(lines[pointer++]);
   header['number of blocks'] = info.nbBlocks;
   return pointer;
