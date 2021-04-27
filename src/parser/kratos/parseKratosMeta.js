@@ -20,22 +20,29 @@ function splitTrimValueUnit(line) {
   return { value: value, unit: unit };
 }
 
-export function parseKratosBlock(meta, line) {
-  if (line.startsWith('Charge Neutraliser :')) {
-    if (line.includes('On')) {
-      meta.chargeNeutraliser.activated = true;
+export function parseKratosMeta(text) {
+  const meta = {};
+  meta.chargeNeutraliser = {};
+  meta.scanSettings = {};
+  const lines = text.split(/\r?\n/);
+  for (const line of lines) {
+    if (line.startsWith('Charge Neutraliser :')) {
+      if (line.includes('On')) {
+        meta.chargeNeutraliser.activated = true;
+      }
+    }
+    if (line.startsWith('Sweeps :')) {
+      meta.scanSettings.numberSweeps = splitTrim(line);
+    }
+    if (line.startsWith('Dwell time :')) {
+      meta.scanSettings.dwellTime = splitTrimValueUnit(line);
+    }
+    if (line.startsWith('Sweep time :')) {
+      meta.scanSettings.sweepTime = splitTrimValueUnit(line);
+    }
+    if (line.startsWith('Charge Balance :')) {
+      meta.chargeNeutraliser.chargeBalance = splitTrimValueUnit(line);
     }
   }
-  if (line.startsWith('Sweeps :')) {
-    meta.scanSettings.numberSweeps = splitTrim(line);
-  }
-  if (line.startsWith('Dwell time :')) {
-    meta.scanSettings.dwellTime = splitTrimValueUnit(line);
-  }
-  if (line.startsWith('Sweep time :')) {
-    meta.scanSettings.sweepTime = splitTrimValueUnit(line);
-  }
-  if (line.startsWith('Charge Balance :')) {
-    meta.chargeNeutraliser.chargeBalance = splitTrimValueUnit(line);
-  }
+  return meta;
 }

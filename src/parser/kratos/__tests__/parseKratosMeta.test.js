@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-import { parseKratosBlock } from '../parseKratosMeta';
+import { parseKratosMeta } from '../parseKratosMeta';
 
 describe('parse Kratos meta data', () => {
   it('example 1', () => {
@@ -9,13 +9,8 @@ describe('parse Kratos meta data', () => {
       join(__dirname, '../../__tests__/data/caseBlockComment.txt'),
       'utf8',
     );
-    const meta = {};
-    meta.chargeNeutraliser = {};
-    meta.scanSettings = {};
-    const lines = text.split(/\r?\n/);
-    for (const line of lines) {
-      parseKratosBlock(meta, line);
-    }
+
+    const meta = parseKratosMeta(text);
 
     expect(meta.scanSettings).toHaveProperty('dwellTime');
     expect(meta.chargeNeutraliser).toHaveProperty('chargeBalance');
