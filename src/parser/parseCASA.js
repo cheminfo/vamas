@@ -3,7 +3,7 @@ import { appendComponent } from './casa/appendComponent';
 import { appendRegion } from './casa/appendRegion';
 
 export function parseCASA(text) {
-  const casa = { regions: [], components: [], calibrations: [] };
+  const casa = { regions: [], components: [], calibrations: [], meta: {} };
   const lines = text.split(/\r?\n/);
   for (const line of lines) {
     if (line.startsWith('CASA comp ')) {

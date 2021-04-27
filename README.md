@@ -5,12 +5,7 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
 
-Vamas file format parser.
-
-
-https://www.iso.org/standard/24269.html
-
-
+Vamas file format parser, following the [ISO specification](https://www.iso.org/standard/24269.html).
 
 ## Installation
 

@@ -122,7 +122,6 @@ function parseHeader(lines, parsed, pointer) {
   if (header['number of future upgrade block entries'] !== 0) {
     throw Error('unsupported future upgrade block entries');
   }
-
   info.nbBlocks = Number(lines[pointer++]);
   header['number of blocks'] = info.nbBlocks;
   return pointer;
