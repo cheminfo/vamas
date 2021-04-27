@@ -35,7 +35,6 @@ export function parse(text) {
   let pointer = 0;
   let parsed = { header: {}, blocks: [], info: {} };
   pointer = parseHeader(lines, parsed, pointer);
-  console.log(parsed.header);
   for (let i = 0; i < parsed.info.nbBlocks; i++) {
     pointer = parseBlock(lines, parsed, pointer);
   }
