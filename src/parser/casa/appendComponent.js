@@ -105,7 +105,7 @@ function parseIndex(value) {
   let parts = value.split(' ');
   return Number(parts[1]);
 }
-function parseConst(value) {}
+function parseConst(value) {return value} // We do not really know what this value means and hence just parse the string
 function parseUncorrectedRSF(value) {
   let parts = value.split(' ');
   return Number(parts[1]);
