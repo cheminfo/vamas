@@ -47,12 +47,12 @@ function parseShape(value) {
   let kind;
   switch (parts[0]) {
     case 'LA':
-      kind = `??? ${parts[0]}`;
+      kind = `${parts[0]}`;
       options.asymmetry = Number(parts[1]);
       options.extension = Number(parts[2]);
       break;
     case 'GL':
-      kind = `??? ${parts[0]}`;
+      kind = `${parts[0]}`;
       options.unknown = Number(parts[1]);
       break;
     default:
