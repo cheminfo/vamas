@@ -1,6 +1,6 @@
 {
   "name": "vamas",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Vamas file format parser",
   "main": "lib/index.js",
   "module": "src/index.js",
