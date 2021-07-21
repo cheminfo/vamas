@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.1](https://www.github.com/cheminfo/vamas/compare/v0.1.0...v0.1.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* close `appendRegion` fails [#8](https://www.github.com/cheminfo/vamas/issues/8) ([d3eec35](https://www.github.com/cheminfo/vamas/commit/d3eec35c634995de16f7dbf0e5cd02b4f4f59eae))
+
 ## [0.1.0](https://www.github.com/cheminfo/vamas/compare/v0.0.3...v0.1.0) (2021-07-21)
 
 
