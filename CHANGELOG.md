@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.1.2](https://www.github.com/cheminfo/vamas/compare/v0.1.1...v0.1.2) (2021-07-21)
+
+
+### Bug Fixes
+
+* remove  in shape kind ([5a534b0](https://www.github.com/cheminfo/vamas/commit/5a534b065ae782049f16ad53e50b6ed9d7134607))
+
 ### [0.1.1](https://www.github.com/cheminfo/vamas/compare/v0.1.0...v0.1.1) (2021-07-21)
 
 
