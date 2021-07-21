@@ -6,7 +6,7 @@ import { parseKratosMeta } from '../parseKratosMeta';
 describe('parse Kratos meta data', () => {
   it('example 1', () => {
     const text = readFileSync(
-      join(__dirname, '../../__tests__/data/caseBlockComment.txt'),
+      join(__dirname, '../../__tests__/data/casaBlockComment.txt'),
       'utf8',
     );
 
