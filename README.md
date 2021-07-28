@@ -4,6 +4,7 @@
 [![build status][ci-image]][ci-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![npm download][download-image]][download-url]
+[![DOI](https://www.zenodo.org/badge/271784092.svg)](https://www.zenodo.org/badge/latestdoi/271784092)
 
 Vamas file format parser, following the [ISO specification](https://www.iso.org/standard/24269.html).
 
