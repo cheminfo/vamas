@@ -276,11 +276,10 @@ function parseBlock(lines, parsed, pointer) {
     ? lines[pointer++]
     : firstBlock['analyser mode'];
 
-  block[
-    'analyser pass energy or retard ratio or mass resolution'
-  ] = includes[21]
-    ? Number(lines[pointer++])
-    : firstBlock['analyser pass energy or retard ratio or mass resolution'];
+  block['analyser pass energy or retard ratio or mass resolution'] =
+    includes[21]
+      ? Number(lines[pointer++])
+      : firstBlock['analyser pass energy or retard ratio or mass resolution'];
 
   if (block.technique === 'AES diff') {
     block['differential width'] = includes[22]
@@ -292,11 +291,12 @@ function parseBlock(lines, parsed, pointer) {
     ? Number(lines[pointer++])
     : firstBlock['magnification of analyser transfer lens'];
 
-  block[
-    'analyser work function or acceptance energy of atom or ion'
-  ] = includes[24]
-    ? Number(lines[pointer++])
-    : firstBlock['analyser work function or acceptance energy of atom or ion'];
+  block['analyser work function or acceptance energy of atom or ion'] =
+    includes[24]
+      ? Number(lines[pointer++])
+      : firstBlock[
+          'analyser work function or acceptance energy of atom or ion'
+        ];
 
   block['target bias'] = includes[25]
     ? Number(lines[pointer++])
@@ -424,9 +424,8 @@ function parseBlock(lines, parsed, pointer) {
 
   if (includes[39]) {
     const nbAdditionalNumericalParameters = Number(lines[pointer++]);
-    block[
-      'number of additional numerical parameters'
-    ] = nbAdditionalNumericalParameters;
+    block['number of additional numerical parameters'] =
+      nbAdditionalNumericalParameters;
     const additionalNumericalParameters = [];
     for (let i = 0; i < nbAdditionalNumericalParameters; i++) {
       additionalNumericalParameters.push({

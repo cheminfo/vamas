@@ -17,7 +17,7 @@ function splitTrimValueUnit(line) {
   let intermediate = splitTrim(line);
   const unit = intermediate.match(/[a-zA-Z]+/g)[0];
   const value = parseFloat(intermediate.replace(unit, ''));
-  return { value: value, unit: unit };
+  return { value, unit };
 }
 
 export function parseKratosMeta(text) {

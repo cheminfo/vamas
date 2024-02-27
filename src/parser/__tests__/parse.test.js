@@ -27,15 +27,7 @@ describe('fromVamas', () => {
 
     let starts = parsed.blocks.map((block) => block['abscissa start']);
     expect(starts).toStrictEqual([
-      286.69,
-      851.69,
-      1336.69,
-      943.69,
-      1076.69,
-      1186.69,
-      1311.69,
-      15.22,
-      1.22,
+      286.69, 851.69, 1336.69, 943.69, 1076.69, 1186.69, 1311.69, 15.22, 1.22,
     ]);
     let result = analyseBlock(parsed.blocks[6]);
     expect(result).toHaveLength(101);

@@ -11,8 +11,8 @@ export function appendRegion(regions, line) {
     name: fields.groups.name,
     background: {
       name: fields.groups.backgroundKind,
-      options: fields.groups.backgroundOptions
-    }
+      options: fields.groups.backgroundOptions,
+    },
   };
 
   regions.push(region);
