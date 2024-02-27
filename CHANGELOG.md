@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/cheminfo/vamas/compare/v0.1.2...v0.2.0) (2024-02-27)
+
+
+### Features
+
+* parse calibrations ([277dd3d](https://github.com/cheminfo/vamas/commit/277dd3d7818844f3ed6b6a7767d3bff43b2495bc))
+
 ### [0.1.2](https://www.github.com/cheminfo/vamas/compare/v0.1.1...v0.1.2) (2021-07-21)
 
 
