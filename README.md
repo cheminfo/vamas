@@ -18,7 +18,6 @@ Vamas file format parser, following the [ISO specification](https://www.iso.org/
 import { parse } from 'vamas';
 
 const result = parse(vamasText);
-
 ```
 
 ## [API Documentation](https://cheminfo.github.io/vamas/)
@@ -29,7 +28,7 @@ const result = parse(vamasText);
 
 [npm-image]: https://img.shields.io/npm/v/vamas.svg
 [npm-url]: https://www.npmjs.com/package/vamas
-[ci-image]: https://github.com/cheminfo/vamas/workflows/Node.js%20CI/badge.svg?branch=master
+[ci-image]: https://github.com/cheminfo/vamas/workflows/Node.js%20CI/badge.svg?branch=main
 [ci-url]: https://github.com/cheminfo/vamas/actions?query=workflow%3A%22Node.js+CI%22
 [codecov-image]: https://img.shields.io/codecov/c/github/cheminfo/vamas.svg
 [codecov-url]: https://codecov.io/gh/cheminfo/vamas

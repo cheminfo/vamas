@@ -2,10 +2,10 @@ name: Deploy HEAD on lactame.com
 
 on:
   push:
-    branches: master
+    branches: main
 
 env:
-  NODE_VERSION: 16.x
+  NODE_VERSION: 20.x
 
 jobs:
   deploy:

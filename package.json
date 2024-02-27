@@ -67,7 +67,7 @@
         {
           "extension": "vms",
           "manufacturer": "ISO 14976",
-          "example": "https://raw.githubusercontent.com/cheminfo/xps-analysis/master/testFiles/assigned.vms"
+          "example": "https://raw.githubusercontent.com/cheminfo/xps-analysis/main/testFiles/assigned.vms"
         }
       ]
     }

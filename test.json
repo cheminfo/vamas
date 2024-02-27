@@ -4,10 +4,7 @@
   "description": "Vamas file format parser",
   "main": "lib/index.js",
   "module": "src/index.js",
-  "files": [
-    "lib",
-    "src"
-  ],
+  "files": ["lib", "src"],
   "scripts": {
     "build": "cheminfo-build  --entry src/index.js --root Vamas",
     "eslint": "eslint src",
@@ -53,10 +50,7 @@
   },
   "info": {
     "logo": "https://raw.githubusercontent.com/cheminfo/font/master/src/misc/cristal2.svg",
-    "domain": [
-      "Physical Chemistry",
-      "Materials Science"
-    ],
+    "domain": ["Physical Chemistry", "Materials Science"],
     "technique": {
       "name": "XPS",
       "chmo": "0000404",
@@ -67,7 +61,7 @@
         {
           "extension": "vms",
           "manufacturer": "ISO 14976",
-          "example": "https://raw.githubusercontent.com/cheminfo/xps-analysis/master/testFiles/assigned.vms"
+          "example": "https://raw.githubusercontent.com/cheminfo/xps-analysis/main/testFiles/assigned.vms"
         }
       ]
     }
