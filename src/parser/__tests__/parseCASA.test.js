@@ -17,11 +17,52 @@ describe('parseCASA', () => {
     expect(casa.components).toHaveLength(10);
   });
 
-  it('issue #8', () => {
+  it('Tougaard background', () => {
     let casa = parseCASA(
       'CASA region (*C 1s*) (*U 2 Tougaard*) 1193.9028 1205.0344 0.278 2 0 0 786.70222 -450 0 0 (*C 1s*) 12.011 0 0.278',
     );
-    expect(casa.regions[0].background.name).toStrictEqual('U 2 Tougaard');
+
+    expect(casa.regions).toStrictEqual([
+      {
+        name: undefined,
+        background: {
+          type: 'U 2 Tougaard',
+          parameters: {
+            kineticEnergyStart: 1193.9028,
+            kineticEnergyEnd: 1205.0344,
+            relativeSensitivityFactor: 0.278,
+            averageWidth: 1,
+            startOffset: 0,
+            endOffset: 0,
+            crossSection: [786.70222, -450, 0, 0],
+          },
+          options: '1193.9028 1205.0344 0.278 2 0 0 786.70222 -450 0 0',
+        },
+      },
+    ]);
+  });
+  it('Shirley background', () => {
+    let casa = parseCASA(
+      'CASA region (*C 1s*) (*Shirley*) 1194.8785 1203.5916 0.278 2 0 0 115.3918 -450 0 0 (*C 1s*) 12.011 0 0.278',
+    );
+    expect(casa.regions).toStrictEqual([
+      {
+        name: undefined,
+        background: {
+          type: 'Shirley',
+          parameters: {
+            kineticEnergyStart: 1194.8785,
+            kineticEnergyEnd: 1203.5916,
+            relativeSensitivityFactor: 0.278,
+            averageWidth: 1,
+            startOffset: 0,
+            endOffset: 0,
+            crossSection: [115.3918, -450, 0, 0]
+          },
+          options: '1194.8785 1203.5916 0.278 2 0 0 115.3918 -450 0 0',
+        },
+      },
+    ]);
   });
   it('issue #9', () => {
     let casa = parseCASA(

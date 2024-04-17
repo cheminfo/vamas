@@ -1,4 +1,4 @@
-import { ensureString } from "ensure-string";
+import { ensureString } from 'ensure-string';
 
 /* eslint-disable no-unused-vars */
 const experiments = [
@@ -298,8 +298,8 @@ function parseBlock(lines, parsed, pointer) {
     includes[24]
       ? Number(lines[pointer++])
       : firstBlock[
-      'analyser work function or acceptance energy of atom or ion'
-      ];
+          'analyser work function or acceptance energy of atom or ion'
+        ];
 
   block['target bias'] = includes[25]
     ? Number(lines[pointer++])
