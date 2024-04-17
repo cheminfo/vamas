@@ -66,5 +66,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "ensure-string": "^1.2.0"
   }
 }

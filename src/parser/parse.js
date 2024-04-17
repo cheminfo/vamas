@@ -1,3 +1,5 @@
+import { ensureString } from "ensure-string";
+
 /* eslint-disable no-unused-vars */
 const experiments = [
   'MAP',
@@ -30,7 +32,8 @@ const technics = [
 
 const scans = ['REGULAR', 'IRREGULAR', 'MAPPING'];
 
-export function parse(text) {
+export function parse(blob) {
+  const text = ensureString(blob);
   const lines = text.split(/\r?\n/);
   let pointer = 0;
   let parsed = { header: {}, blocks: [], info: {} };
@@ -295,8 +298,8 @@ function parseBlock(lines, parsed, pointer) {
     includes[24]
       ? Number(lines[pointer++])
       : firstBlock[
-          'analyser work function or acceptance energy of atom or ion'
-        ];
+      'analyser work function or acceptance energy of atom or ion'
+      ];
 
   block['target bias'] = includes[25]
     ? Number(lines[pointer++])
