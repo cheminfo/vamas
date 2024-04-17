@@ -57,7 +57,7 @@ describe('parseCASA', () => {
             averageWidth: 1,
             startOffset: 0,
             endOffset: 0,
-            crossSection: [115.3918, -450, 0, 0]
+            crossSection: [115.3918, -450, 0, 0],
           },
           options: '1194.8785 1203.5916 0.278 2 0 0 115.3918 -450 0 0',
         },
