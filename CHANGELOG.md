@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0](https://github.com/cheminfo/vamas/compare/v0.2.0...v0.3.0) (2024-04-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* improve parseCASA
+* improve appendCalibration and rename after / before
+
+### release-as
+
+* v0.3.0 ([9afcfee](https://github.com/cheminfo/vamas/commit/9afcfeee6bda7d1df8f57f7d7ba28fa9900ae8eb))
+
+
+### Features
+
+* improve appendCalibration and rename after / before ([17ce030](https://github.com/cheminfo/vamas/commit/17ce03040a788a0b4eaad5417f833a0cb7226e60))
+* improve parseCASA ([664d599](https://github.com/cheminfo/vamas/commit/664d5998f9f83f170e1eb083435cfab5200995be))
+* improve parsing of CASA appendRegion ([45b9906](https://github.com/cheminfo/vamas/commit/45b9906f5c18df6eb0cab77bc9c57699897c232f))
+* parser allows string or binary file ([d771923](https://github.com/cheminfo/vamas/commit/d771923fecdefddff2c1a76c7cd55aa0ef135c3f))
+
 ## [0.2.0](https://github.com/cheminfo/vamas/compare/v0.1.2...v0.2.0) (2024-02-27)
 
 
