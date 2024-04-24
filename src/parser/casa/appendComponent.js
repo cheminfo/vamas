@@ -1,4 +1,3 @@
-
 /**
 Fitting / each 'component' is a fitted lineshape, and can be from a different element while on a given orbital, for instance Ruthenium has peaks in the C1s region. The component will often have overlapping lineshapes
 
@@ -28,7 +27,6 @@ or relative to another component, with this weird notation:
 "Position 1202.261 0 0 2 -1.05017"
 here the position is separated from the constaints by "0 0", then "2" indicates the component to which is is constrained, here the 2nd component (third line of the comp, i.e, starting from 0). And the last number "-1.05017" is the shift (in the kinetic energy scale)
 */
-
 
 export function appendComponent(components, line) {
   // CASA comp (*Mo 3d MoS2 2H*) (*LA(1.53,243)*) Area 230.36971 1e-020 2327991 -1 1 MFWHM 0.88528218 0.2 2 -1 1 Position 1257.22 1257.02 1257.22 -1 1 RSF 10.804667 MASS 95.9219 INDEX -1 (*Mo 3d*) CONST (**) UNCORRECTEDRSF 9.5
@@ -117,11 +115,11 @@ function parseMultiplicationConstrain(value) {
   const constrain = {
     linkedComponent: Number(parts[4]), // line number, no constrain if -1
     factor: Number(parts[5]), // multiplication factor of the value in the linked line
-  }
+  };
   if (constrain.linkedComponent >= 0) {
     result.constrain = constrain;
   }
-  return result
+  return result;
 }
 
 function parseKEShiftConstrain(value) {
@@ -134,35 +132,28 @@ function parseKEShiftConstrain(value) {
   const constrain = {
     linkedComponent: Number(parts[4]), // line number, no constrain if -1
     shift: Number(parts[5]), // shift of the value in the linked line
-  }
+  };
   if (constrain.linkedComponent >= 0) {
     result.constrain = constrain;
   }
-  return result
+  return result;
 }
 
-function parsePosition(value) {
-  let parts = value.split(' ');
-  return {
-    value: Number(parts[1]),
-    lowerBound: Number(parts[2]),
-    upperBound: Number(parts[3]),
-    unknown1: Number(parts[4]),
-    unknown2: Number(parts[5]),
-  };
-}
 function parseRSF(value) {
   let parts = value.split(' ');
   return Number(parts[1]);
 }
+
 function parseMass(value) {
   let parts = value.split(' ');
   return Number(parts[1]);
 }
+
 function parseIndex(value) {
   let parts = value.split(' ');
   return Number(parts[1]);
 }
+
 function parseUncorrectedRSF(value) {
   let parts = value.split(' ');
   return Number(parts[1]);
