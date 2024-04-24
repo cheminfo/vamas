@@ -12,6 +12,23 @@ Vamas file format parser, following the [ISO specification](https://www.iso.org/
 
 `$ npm i vamas`
 
+One VAMAS file contains
+
+- many blocks
+  - survey (or wide)
+  - multiplex (for example C, Ru, ...)
+  - identified by `blockID`
+
+In a block:
+
+- regions (used for baseline)
+- identified by `regionID`
+
+In a block and expected to be in a specific region:
+
+- components: corresponds to the shape of the peak and relies on the baseline
+- identified by `componentID`
+
 ## Usage
 
 ```js
