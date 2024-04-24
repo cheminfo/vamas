@@ -8,7 +8,6 @@
  * @param {string} line 
  */
 
-
 export function appendCalibration(calibrations, line) {
   let calibration = {};
   // Calib M = 281.1700 A = 284.8 BE ADD
@@ -28,10 +27,12 @@ export function appendCalibration(calibrations, line) {
   calibration.measured = Number(fields.groups.measured);
   calibration.referenced = Number(fields.groups.referenced);
   if (fields.groups.rest.includes('BE')) {
-    calibration.bindingEnergyShift = calibration.referenced - calibration.measured;
+    calibration.bindingEnergyShift =
+      calibration.referenced - calibration.measured;
     calibration.kind = 'bindingEnergy';
   } else {
-    calibration.bindingEnergyShift = calibration.measured - calibration.referenced;
+    calibration.bindingEnergyShift =
+      calibration.measured - calibration.referenced;
     calibration.kind = 'kineticEnergy';
   }
   calibration.kineticEnergyShift = -calibration.bindingEnergyShift;
