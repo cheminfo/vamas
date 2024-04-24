@@ -1,7 +1,18 @@
+/**
+ * Regions are used to calculate the baseline.
+ * There may be several overlapping regions.
+ * We could just throw an error if it happens has this is likely just a bug from casaXPS to allow for this.
+ * "CASA region (*C 1s*) (*Shirley*) 1202.686 1208.454 0.278 2 0 0 115.3918 -450 0 0 (*C 1s*) 12.011 0 0.278"
+ *
+ * THe last 3 numbers:  12.011 0 0.278, are the mass of the element (Carbon here), a separator
+ * and the relative sensitivity factor of the element.
+ *  Note that the relative sensitivity factor given within the background part ((*C 1s*) (*Shirley*) 1202.686 1208.454 0.278 2 0 0 115.3918 -450 0 0 (*C 1s*)), can be different than the last one.
+ */
+
 export function appendRegion(regions, line) {
   // CASA region (*Mo 3d*) (*Shirley*) 1249.3343 1262.7065 10.804667 2 0 0 392.54541 -450 0 0 (*Mo 3d*) 95.9219 0 9.5
   let fields = line.match(
-    /CASA region \(\*(?<blockID>.*)\*\) \(\*(?<backgroundType>.*)\*\) (?<backgroundOptions>.*) \((?<comment>.*)\) (?<surface>.*)/,
+    /CASA region \(\*(?<regionID>.*)\*\) \(\*(?<backgroundType>.*)\*\) (?<backgroundOptions>.*) \(\*(?<regionBlockID>.*)\*\) (?<atomicMass>.*) (?<separator>.) (?<relativeSensitivityFactor>.*)/,
   );
 
   if (!fields) {
@@ -9,14 +20,21 @@ export function appendRegion(regions, line) {
   }
 
   let region = {
-    name: fields.groups.name,
+    regionID: fields.groups.regionID,
+    block: {
+      regionBlockID: fields.groups.regionBlockID,
+      atomicMass: parseFloat(fields.groups.atomicMass),
+      relativeSensitivityFactor: parseFloat(
+        fields.groups.relativeSensitivityFactor,
+      ),
+    },
     background: {
       type: fields.groups.backgroundType,
       parameters: parseBackgroundParameters(
         fields.groups.backgroundType,
         fields.groups.backgroundOptions,
       ),
-      options: fields.groups.backgroundOptions,
+      rawParameters: fields.groups.backgroundOptions,
     },
   };
 
