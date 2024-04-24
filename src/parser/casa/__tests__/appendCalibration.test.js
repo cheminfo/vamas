@@ -16,22 +16,22 @@ Calib M = 1.1 A = 5.1 ADD`;
   expect(calibrations).toHaveLength(3);
   expect(calibrations).toStrictEqual([
     {
-      after: 20.1,
-      before: 10.1,
+      referenced: 20.1,
+      measured: 10.1,
       bindingEnergyShift: 10.000000000000002,
       kind: 'bindingEnergy',
       kineticEnergyShift: -10.000000000000002,
     },
     {
-      after: 40.2,
-      before: 20.2,
+      referenced: 40.2,
+      measured: 20.2,
       bindingEnergyShift: 20.000000000000004,
       kind: 'bindingEnergy',
       kineticEnergyShift: -20.000000000000004,
     },
     {
-      after: 5.1,
-      before: 1.1,
+      referenced: 5.1,
+      measured: 1.1,
       bindingEnergyShift: -3.9999999999999996,
       kind: 'kineticEnergy',
       kineticEnergyShift: 3.9999999999999996,
