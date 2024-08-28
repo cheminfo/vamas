@@ -1,5 +1,7 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+import { describe, expect, it } from 'vitest';
 
 import { parse } from '../parse';
 
@@ -32,7 +34,7 @@ describe('fromVamas', () => {
     let result = analyseBlock(parsed.blocks[6]);
     expect(result).toHaveLength(101);
     expect(result[0]).toStrictEqual({ x: 175, y: 55111, k: 1311.69 });
-    expect(result[result.length - 1]).toStrictEqual({
+    expect(result.at(-1)).toStrictEqual({
       x: 155,
       y: 64967,
       k: 1331.69,

@@ -1,11 +1,11 @@
 /**
  * Referencing: (energy calibration, typically performed on the binding energy scale)
-" Calib M = 0 A = 3.111 ADD"
+ * " Calib M = 0 A = 3.111 ADD"
  * means that the block should be shifted in binding energy by adding the difference A - M = 3.111 eV. M is not necessarily 0.
  * If the line contains BE, it means that the operation should be done on the BE scale,
  * alternatively, simply change the sign of the difference, here it would be -3,111, to be added to the data in the binding energy scale.
- * @param {object} calibrations 
- * @param {string} line 
+ * @param {object} calibrations
+ * @param {string} line
  */
 
 export function appendCalibration(calibrations, line) {

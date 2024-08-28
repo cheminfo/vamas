@@ -7,6 +7,8 @@
  * THe last 3 numbers:  12.011 0 0.278, are the mass of the element (Carbon here), a separator
  * and the relative sensitivity factor of the element.
  *  Note that the relative sensitivity factor given within the background part ((*C 1s*) (*Shirley*) 1202.686 1208.454 0.278 2 0 0 115.3918 -450 0 0 (*C 1s*)), can be different than the last one.
+ * @param regions
+ * @param line
  */
 
 export function appendRegion(regions, line) {
@@ -23,8 +25,8 @@ export function appendRegion(regions, line) {
     regionID: fields.groups.regionID,
     block: {
       regionBlockID: fields.groups.regionBlockID,
-      atomicMass: parseFloat(fields.groups.atomicMass),
-      relativeSensitivityFactor: parseFloat(
+      atomicMass: Number.parseFloat(fields.groups.atomicMass),
+      relativeSensitivityFactor: Number.parseFloat(
         fields.groups.relativeSensitivityFactor,
       ),
     },
@@ -53,7 +55,7 @@ function parseBackgroundParameters(type, string) {
   ] = string
     .split(/ +/)
     .filter((field) => field.trim() !== '')
-    .map((field) => parseFloat(field));
+    .map((field) => Number.parseFloat(field));
 
   // todo: strange we need to remove 1 from averageWidth
   return {

@@ -1,3 +1,5 @@
+import { test, expect } from 'vitest';
+
 import { appendComponent } from '../appendComponent';
 
 test('appendComponent', () => {

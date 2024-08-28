@@ -118,12 +118,12 @@ function parseHeader(lines, parsed, pointer) {
   }
   header.futureUpgradeExperimentEntries = futureUpgradeExperimentEntries;
   if (info.nbFutureUpgradeExperimentEntries !== 0) {
-    throw Error('unsupported future upgrade experiment entries');
+    throw new Error('unsupported future upgrade experiment entries');
   }
 
   header['number of future upgrade block entries'] = Number(lines[pointer++]);
   if (header['number of future upgrade block entries'] !== 0) {
-    throw Error('unsupported future upgrade block entries');
+    throw new Error('unsupported future upgrade block entries');
   }
   info.nbBlocks = Number(lines[pointer++]);
   header['number of blocks'] = info.nbBlocks;
@@ -331,7 +331,7 @@ function parseBlock(lines, parsed, pointer) {
     : firstBlock['charge of detected particle'];
 
   if (header['scan mode'] !== 'REGULAR') {
-    throw Error('Only REGULAR scans are supported');
+    throw new Error('Only REGULAR scans are supported');
   }
 
   block['abscissa label'] = includes[30]
@@ -363,8 +363,8 @@ function parseBlock(lines, parsed, pointer) {
   } else {
     block['number of corresponding variables'] =
       firstBlock['number of corresponding variables'];
-    block.correspondingVariables = JSON.parse(
-      JSON.stringify(firstBlock.correspondingVariables),
+    block.correspondingVariables = structuredClone(
+      firstBlock.correspondingVariables,
     );
     block.correspondingVariables.array = [];
   }
