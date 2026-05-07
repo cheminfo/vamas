@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0](https://github.com/cheminfo/vamas/compare/v0.3.0...v1.0.0) (2026-05-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* package is now ESM-only; consumers using require() must migrate to import, or run Node.js >= 20.19, >= 22.12, or any 24.x or later.
+
+### Features
+
+* migrate package to ESM and align with current standards ([4a33be2](https://github.com/cheminfo/vamas/commit/4a33be28099f9c73613d65b75900b8ba216ab005))
+
 ## [0.3.0](https://github.com/cheminfo/vamas/compare/v0.2.0...v0.3.0) (2024-04-24)
 
 
