@@ -1,6 +1,6 @@
-import { appendCalibration } from './casa/appendCalibration';
-import { appendComponent } from './casa/appendComponent';
-import { appendRegion } from './casa/appendRegion';
+import { appendCalibration } from './casa/appendCalibration.js';
+import { appendComponent } from './casa/appendComponent.js';
+import { appendRegion } from './casa/appendRegion.js';
 
 export function parseCASA(text) {
   const casa = { regions: [], components: [], calibrations: [] };

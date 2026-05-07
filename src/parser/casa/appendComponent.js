@@ -17,15 +17,15 @@
  * positionConstraint ub: 1207.3108 // in kinetic energy eV
  * relativeSensitivityFactor: 0.278
  * mass: 12.011
-index: -1	// index allows to group different components to plot their manifold
-uncorrectedRSF: 0.278
- 
-Constraints: the constraints can either be absolute, in which case the value to constraint is directly followed by the constaints, e.g.:
-Position 1203.4193 1202.686 1207.3108
- 
-or relative to another component, with this weird notation:
-"Position 1202.261 0 0 2 -1.05017"
-here the position is separated from the constaints by "0 0", then "2" indicates the component to which is is constrained, here the 2nd component (third line of the comp, i.e, starting from 0). And the last number "-1.05017" is the shift (in the kinetic energy scale)
+ * index: -1	// index allows to group different components to plot their manifold
+ * uncorrectedRSF: 0.278
+ *
+ * Constraints: the constraints can either be absolute, in which case the value to constraint is directly followed by the constaints, e.g.:
+ * Position 1203.4193 1202.686 1207.3108
+ *
+ * or relative to another component, with this weird notation:
+ * "Position 1202.261 0 0 2 -1.05017"
+ * here the position is separated from the constaints by "0 0", then "2" indicates the component to which is is constrained, here the 2nd component (third line of the comp, i.e, starting from 0). And the last number "-1.05017" is the shift (in the kinetic energy scale)
  * @param components
  * @param line
  */

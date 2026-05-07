@@ -1,6 +1,6 @@
-import { test, expect } from 'vitest';
+import { expect, test } from 'vitest';
 
-import { appendRegion } from '../appendRegion';
+import { appendRegion } from '../appendRegion.js';
 
 test('appendRegion', () => {
   const data = `CASA region (*C 1s*) (*Shirley*) 1194.8785 1203.5916 0.278 2 0 0 115.3918 -450 0 0 (*C 1s*) 12.011 0 0.278`;

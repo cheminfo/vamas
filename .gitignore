@@ -5,6 +5,7 @@ npm-debug.log*
 
 # editors
 .idea
+.claude
 
 # Runtime data
 pids
@@ -15,7 +16,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-coverage
+coverage/
 
 # nyc test coverage
 .nyc_output
@@ -32,6 +33,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+package-lock.json
 
 # Optional npm cache directory
 .npm

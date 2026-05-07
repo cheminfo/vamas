@@ -1,6 +1,6 @@
-import { test, expect } from 'vitest';
+import { expect, test } from 'vitest';
 
-import { appendComponent } from '../appendComponent';
+import { appendComponent } from '../appendComponent.js';
 
 test('appendComponent', () => {
   const data = `
@@ -21,7 +21,8 @@ CASA comp (*O 1s orgs*) (*GL(30)*) Area 21457.732 1e-020 1583614.4 0 0.5 MFWHM 2
   }
 
   const componentIDs = components.map((c) => c.componentID);
-  expect(componentIDs).toEqual([
+
+  expect(componentIDs).toStrictEqual([
     'C 1s CO',
     'C 1s',
     'C 1s CC',
@@ -31,6 +32,7 @@ CASA comp (*O 1s orgs*) (*GL(30)*) Area 21457.732 1e-020 1583614.4 0 0.5 MFWHM 2
   ]);
 
   const shapes = components.map((c) => c.shape);
+
   expect(shapes).toStrictEqual([
     {
       kind: 'lorentzianAsymmetric',
@@ -47,6 +49,7 @@ CASA comp (*O 1s orgs*) (*GL(30)*) Area 21457.732 1e-020 1583614.4 0 0.5 MFWHM 2
   ]);
 
   const areas = components.map((c) => c.area);
+
   expect(areas).toStrictEqual([
     {
       value: 12064.956,
@@ -82,6 +85,7 @@ CASA comp (*O 1s orgs*) (*GL(30)*) Area 21457.732 1e-020 1583614.4 0 0.5 MFWHM 2
   ]);
 
   const fwhms = components.map((c) => c.fwhm);
+
   expect(fwhms).toStrictEqual([
     {
       value: 2.1060023,
@@ -120,6 +124,7 @@ CASA comp (*O 1s orgs*) (*GL(30)*) Area 21457.732 1e-020 1583614.4 0 0.5 MFWHM 2
   ]);
 
   const positions = components.map((c) => c.position);
+
   expect(positions).toStrictEqual([
     { value: 1205.191, lowerBound: 1198.8295, upperBound: 1210.6853 },
     { value: 1205.69, lowerBound: 1198.8295, upperBound: 1210.6853 },

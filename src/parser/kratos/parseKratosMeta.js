@@ -22,9 +22,7 @@ function splitTrimValueUnit(line) {
 }
 
 export function parseKratosMeta(text) {
-  const meta = {};
-  meta.chargeNeutraliser = {};
-  meta.scanSettings = {};
+  const meta = { chargeNeutraliser: {}, scanSettings: {} };
   const lines = text.split(/\r?\n/);
   for (const line of lines) {
     if (line.startsWith('Charge Neutraliser :') && line.includes('On')) {

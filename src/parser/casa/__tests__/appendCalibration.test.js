@@ -1,6 +1,6 @@
-import { test, expect } from 'vitest';
+import { expect, test } from 'vitest';
 
-import { appendCalibration } from '../appendCalibration';
+import { appendCalibration } from '../appendCalibration.js';
 
 test('appendCalibration', () => {
   const data = `Calib M = 10.1 A = 20.1 BE ADD

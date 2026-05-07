@@ -1,6 +1,6 @@
-import { test, expect } from 'vitest';
+import { expect, test } from 'vitest';
 
-import { parse } from '..';
+import { parse } from '../index.js';
 
 test('check parse', () => {
   expect(parse).toBeInstanceOf(Function);

@@ -1,3 +1,4 @@
+/* eslint-disable unicorn/no-immediate-mutation -- block parser builds the result object incrementally with conditional sections */
 import { ensureString } from 'ensure-string';
 
 /* eslint-disable no-unused-vars */
@@ -139,9 +140,10 @@ function parseBlock(lines, parsed, pointer) {
       ? new Array(40).fill(true)
       : info.blockParametersincludes;
 
-  const block = {};
-  block['block identifier'] = lines[pointer++];
-  block['sample identifier'] = lines[pointer++];
+  const block = {
+    'block identifier': lines[pointer++],
+    'sample identifier': lines[pointer++],
+  };
   block['year in full'] = includes[0]
     ? Number(lines[pointer++])
     : firstBlock['year in full'];
@@ -460,6 +462,6 @@ function parseBlock(lines, parsed, pointer) {
     }
   }
 
-  parsed.blocks.push(block);
+  blocks.push(block);
   return pointer;
 }
